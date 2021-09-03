@@ -1,0 +1,67 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://www.codeinvestigator.com/spaceshiprequest.schema.json",
+  "title": "Vaccination Passport",
+  "type": "object",
+  "properties": {
+    "person": {
+      "$ref": "#/definitions/person",
+      "description": "Owner of corona passport"
+    },
+    "passport": {
+      "$ref": "#/definitions/passport",
+      "description": "Corona Information"
+    }
+  },
+  "required": [
+    "person",
+    "passport"
+  ],
+  "definitions": {
+    "person": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "ssn": {
+          "type": "string"
+        },
+        "age": {
+          "type": "integer"
+        }
+      },
+      "required": [
+        "name",
+        "age"
+      ]
+    },
+    "passport": {
+      "type": "object",
+      "description": "Corona passport information",
+      "properties": {
+        "vaccinationProcessBegun": {
+          "type": "boolean"
+        },
+        "vaccinationProcessEnded": {
+          "type": "boolean"
+        },
+        "testedNegative": {
+          "type": "boolean"
+        },
+        "testDate": {
+          "type": "string"
+        },
+        "hasBeenSickWithCorona": {
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "vaccinationProcessBegun",
+        "vaccinationProcessEnded",
+        "testedNegative",
+        "hasBeenSickWithCorona"
+      ]
+    }
+  }
+}
